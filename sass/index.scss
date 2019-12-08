@@ -12,6 +12,7 @@ main {
   div {
     min-height: 30%;
     background-color: blue;
+
     &:nth-child(#{$i}) {
       height: random(5) * 10%;
       background: linear-gradient(
@@ -19,6 +20,7 @@ main {
         rgb(random(255), random(255), random(255)),
         rgb(random(255), random(255), random(255))
       );
+      box-shadow: 0px 0px 15px rgb(random(255), random(255), random(255));
       animation: scale-y random(20) + s random(5) + s infinite ease-in;
     }
     @if $i % 2 == 0 {
