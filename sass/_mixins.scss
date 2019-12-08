@@ -1,0 +1,37 @@
+@mixin repeated-grid($cols, $rows, $gap) {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template: repeat($rows, 1fr) / repeat($cols, 1fr);
+  grid-gap: $gap + px;
+}
+
+@mixin odd-even-cols() {
+  @for $i from 1 through $rows {
+    &:nth-child(odd) {
+    }
+  }
+}
+
+@mixin random-height($num) {
+  @for $i from 1 through 30 {
+    :nth-child(#{$i}) {
+      height: random(100) + px;
+    }
+  }
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
