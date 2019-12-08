@@ -7,6 +7,7 @@ main {
   @include repeated-grid(30, 1, 0);
   background-color: #000;
 }
+
 @for $i from 1 through 30 {
   div {
     min-height: 30%;
@@ -18,7 +19,7 @@ main {
         rgb(random(255), random(255), random(255)),
         rgb(random(255), random(255), random(255))
       );
-      animation: scale-y random(20) + s random(5) + s infinite alternate;
+      animation: scale-y random(20) + s random(5) + s infinite ease-in;
     }
     @if $i % 2 == 0 {
       &:nth-child(#{$i}) {
