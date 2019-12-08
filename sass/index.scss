@@ -5,9 +5,11 @@
 
 main {
   @include repeated-grid(30, 1, 0);
+  background-color: #000;
 }
 @for $i from 1 through 30 {
   div {
+    min-height: 30%;
     background-color: blue;
     &:nth-child(#{$i}) {
       height: random(5) * 10%;
@@ -16,20 +18,20 @@ main {
         rgb(random(255), random(255), random(255)),
         rgb(random(255), random(255), random(255))
       );
-      animation: scale-y random(20) + s random(15) + s infinite alternate;
+      animation: scale-y random(20) + s random(5) + s infinite alternate;
     }
     @if $i % 2 == 0 {
       &:nth-child(#{$i}) {
         align-self: end;
-        border-top-left-radius: random(10) + vh;
-        border-top-right-radius: random(10) + vh;
+        border-top-left-radius: random(15) + vh;
+        border-top-right-radius: random(15) + vh;
         transform-origin: bottom;
       }
     } @else {
       &:nth-child(#{$i}) {
         align-self: start;
-        border-bottom-left-radius: random(10) + vh;
-        border-bottom-right-radius: random(10) + vh;
+        border-bottom-left-radius: random(15) + vh;
+        border-bottom-right-radius: random(15) + vh;
 
         transform-origin: top;
       }
